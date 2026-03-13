@@ -3,8 +3,7 @@ from collections import defaultdict
 
 def extract_k(filename):
     # Remove extension if present
-    base = filename.rsplit('.', 1)[0] if '.' in filename else filename
-    parts = base.split('_')
+    parts = filename.split('_')
     if len(parts) < 3:
         raise ValueError(f"Could not extract k from filename: {filename}")
     # k is the 3rd token from the end
