@@ -31,7 +31,7 @@ plt.xlabel("Streaming Progress (%)")
 plt.ylabel("Partition ID")
 plt.tight_layout()
 
-out_path = sys.argv[1].replace('.py', '_heatmap.png')
+out_path = sys.argv[1].replace('.txt', '_heatmap.png')
 plt.savefig(out_path, dpi=150)
 print(f"Saved: {out_path}")
 plt.show()

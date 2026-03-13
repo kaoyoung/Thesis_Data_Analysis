@@ -80,7 +80,7 @@ def count_partitions(filepath):
     )
 
     # Write to output file
-    out_path = filepath.rsplit('.', 1)[0] + '_partition_counts.py'
+    out_path = filepath.rsplit('.', 1)[0] + '_partition_counts.txt'
     with open(out_path, 'w') as f:
         f.write(np_str + '\n')
 
