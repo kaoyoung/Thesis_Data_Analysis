@@ -1,0 +1,27 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 1. 假設你已經將數據整理成 matrix (512x10)
+# data = np.array(...) 
+# columns = ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"]
+# L_max = 101866
+
+# 2. 將數據標準化為 0~1 (飽和度)
+# saturation_matrix = data / L_max
+
+# 3. 繪圖設定
+plt.figure(figsize=(12, 8))
+sns.heatmap(saturation_matrix, 
+            cmap="YlOrRd",  # 黃色到紅色，紅色代表撞天花板
+            xticklabels=columns,
+            yticklabels=50, # 每隔 50 個顯示一個 ID，避免座標軸太擠
+            cbar_kws={'label': 'Saturation Level (Current Size / L_max)'})
+
+plt.title("Partition Saturation Heatmap (com-friendster, k=512)")
+plt.xlabel("Streaming Progress (%)")
+plt.ylabel("Partition ID")
+
+# 強調 1.0 (飽和) 的部分
+plt.show()
